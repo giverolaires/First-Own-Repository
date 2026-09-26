@@ -4,142 +4,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aires Jhoy J. Giverola - CV</title>
+    <title>Aires Jhoy J. Giverola — CV</title>
     <style>
+        :root {
+            --ink: #1B2430;
+            --paper: #FAF9F6;
+            --accent: #2F6F5E;
+            --muted: #5A6472;
+            --line: #D8D3C7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
+            margin: 0;
+            background: #E7E4DC;
+            font-family: "Times New Roman", Times, Georgia, serif;
+            color: var(--ink);
         }
 
-        .container {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .page {
+            max-width: 850px;
+            margin: 32px auto;
+            background: var(--paper);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+            padding: 0;
         }
 
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 5px;
+        /* Header */
+        header {
+            padding: 44px 56px 28px 56px;
+            border-bottom: 3px solid var(--ink);
         }
 
-        .subtitle {
-            font-size: 1.2em;
-            color: #7f8c8d;
+        header h1 {
+            font-family: "Times New Roman", Times, Georgia, serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            letter-spacing: 0.5px;
+        }
+
+        header .role {
+            font-size: 1.15em;
+            color: var(--accent);
             font-weight: bold;
-            margin-top: 0;
+            margin: 0 0 14px 0;
         }
 
-        .contact-info {
-            font-size: 0.95em;
-            margin-bottom: 20px;
-            color: #555;
+        header .contact {
+            font-size: 0.92em;
+            color: var(--muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 22px;
+        }
+
+        /* Body grid */
+        .body {
+            display: grid;
+            grid-template-columns: 230px 1fr;
+        }
+
+        aside {
+            background: #F1EFE9;
+            padding: 32px 30px 40px 56px;
+            border-right: 1px solid var(--line);
+        }
+
+        main {
+            padding: 32px 56px 40px 40px;
         }
 
         h2 {
-            color: #2980b9;
-            border-bottom: 2px solid #2980b9;
-            padding-bottom: 5px;
-            margin-top: 25px;
-        }
-
-        .job-title,
-        .school-name {
+            font-size: 0.82em;
             font-weight: bold;
-            color: #34495e;
+            color: var(--accent);
+            letter-spacing: 0.03em;
+            margin: 0 0 12px 0;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--line);
         }
 
-        .date-location {
-            font-style: italic;
-            color: #666;
-            font-size: 0.9em;
+        aside h2:not(:first-child),
+        main h2:not(:first-child) {
+            margin-top: 28px;
         }
 
-        ul {
-            margin-top: 5px;
-            padding-left: 20px;
+        /* Sidebar entries */
+        .side-item {
+            margin-bottom: 16px;
         }
 
-        li {
+        .side-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .side-item .name {
+            font-weight: bold;
+            font-size: 0.97em;
+            line-height: 1.3;
+        }
+
+        .side-item .meta {
+            font-size: 0.85em;
+            color: var(--muted);
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+
+        /* Main entries */
+        .entry {
+            margin-bottom: 22px;
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .entry-title {
+            font-weight: bold;
+            font-size: 1.02em;
+        }
+
+        .entry-org {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .entry-date {
+            font-size: 0.85em;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        .entry ul {
+            margin: 8px 0 0 0;
+            padding-left: 18px;
+        }
+
+        .entry li {
+            font-size: 0.93em;
             margin-bottom: 5px;
+            line-height: 1.45;
+        }
+
+        .summary {
+            font-size: 0.96em;
+            line-height: 1.55;
+            color: #333;
+            max-width: 62ch;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width:640px) {
+            .body {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+                padding: 28px 24px;
+            }
+
+            header {
+                padding: 32px 24px 24px 24px;
+            }
+
+            main {
+                padding: 28px 24px 32px 24px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="page">
 
-    <div class="container">
-        <!-- Header -->
-        <h1>AIRES JHOY J. GIVEROLA</h1>
-        <p class="subtitle">ESL Teacher & Tutor</p>
-        <div class="contact-info">
-            Purok 5, Mamali, Malativas, Panabo City, Davao del Norte<br>
-            Phone: 0915 581 4236 | Email: airesjhoyjgiverola@gmail.com
+        <header>
+            <h1>Aires Jhoy J. Giverola</h1>
+            <p class="role">ESL Teacher &amp; Tutor</p>
+            <div class="contact">
+                <span>Purok 5, Mamali, Malativas, Panabo City, Davao del Norte</span>
+                <span>0915 581 4236</span>
+                <span>airesjhoyjgiverola@gmail.com</span>
+            </div>
+        </header>
+
+        <div class="body">
+
+            <aside>
+                <h2>Education</h2>
+                <div class="side-item">
+                    <div class="name">BS Information Technology</div>
+                    <div class="meta">Davao del Norte State College<br>2023 – Present<br>Dean's Lister</div>
+                </div>
+                <div class="side-item">
+                    <div class="name">Junior High School</div>
+                    <div class="meta">North Davao Colleges<br>2017 – 2023<br>With High Honors</div>
+                </div>
+                <div class="side-item">
+                    <div class="name">Elementary</div>
+                    <div class="meta">Malativas Elementary School<br>2010 – 2017<br>With High Honors</div>
+                </div>
+
+                <h2>Certifications</h2>
+                <div class="side-item">
+                    <div class="name">120-Hr TEFL Certificate</div>
+                    <div class="meta">TEFL Professional Institute — Distinction, Feb 2026</div>
+                </div>
+                <div class="side-item">
+                    <div class="name">Ignite Philippines</div>
+                    <div class="meta">Wadhwani Foundation — 42 hrs, Jun 2026</div>
+                </div>
+                <div class="side-item">
+                    <div class="name">CCNA: Intro to Networks</div>
+                    <div class="meta">Cisco Networking Academy, Jun 2025</div>
+                </div>
+            </aside>
+
+            <main>
+                <h2>Summary</h2>
+                <p class="summary">Dedicated and adaptable ESL teacher with experience in virtual instruction and
+                    one-on-one tutoring. Skilled in building engaging, student-centered lessons that improve fluency and
+                    confidence.</p>
+
+                <h2>Experience</h2>
+
+                <div class="entry">
+                    <div class="entry-head">
+                        <span class="entry-title">ESL Teacher <span class="entry-org">— Speak Well
+                                (iCanConnect)</span></span>
+                        <span class="entry-date">Feb 2026 – Jul 2026 · Remote / Panabo City</span>
+                    </div>
+                    <ul>
+                        <li>Delivered interactive online Cambridge English lessons to students aged 5–12.</li>
+                        <li>Monitored student progress and adapted lesson pacing to support engagement and retention.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-head">
+                        <span class="entry-title">ESL Teacher <span class="entry-org">— Borderlink Educational Services
+                                Inc.</span></span>
+                        <span class="entry-date">Aug 2024 – Jan 2026 · Remote / Panabo City</span>
+                    </div>
+                    <ul>
+                        <li>Assessed student progress daily and wrote performance reports.</li>
+                        <li>Followed national and regional policies for online English instruction.</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-head">
+                        <span class="entry-title">Personal Tutor <span class="entry-org">— Self-Employed</span></span>
+                        <span class="entry-date">Jun 2022 – Jul 2023 · Panabo City</span>
+                    </div>
+                    <ul>
+                        <li>Delivered one-on-one academic coaching in English, Math, and Science for students aged
+                            10–16.</li>
+                        <li>Used interactive digital tools to strengthen student engagement and lesson retention.</li>
+                    </ul>
+                </div>
+            </main>
+
         </div>
-
-        <!-- Professional Summary -->
-        <h2>PROFESSIONAL SUMMARY</h2>
-        <p>Dedicated and adaptable ESL Teacher with experience in virtual instruction and one-on-one tutoring. Skilled
-            in creating engaging lesson plans and improving student fluency and confidence through interactive,
-            student-centered methods.</p>
-
-        <!-- Work Experience -->
-        <h2>WORK EXPERIENCE</h2>
-
-        <p>
-            <span class="job-title">ESL Teacher</span> - Speak Well (iCanConnect)<br>
-            <span class="date-location">February 2026 - July 2026 | Remote / Panabo City</span>
-        </p>
-        <ul>
-            <li>Deliver interactive online Cambridge English lessons to students aged 5 to 12.</li>
-            <li>Monitor student progress and adapt lesson pacing to support engagement and retention.</li>
-        </ul>
-
-        <p>
-            <span class="job-title">ESL Teacher</span> - Borderlink Educational Services Inc.<br>
-            <span class="date-location">August 2024 - January 2026 | Remote / Panabo City</span>
-        </p>
-        <ul>
-            <li>Assess student progress daily and write performance reports.</li>
-            <li>Follow national and regional policies for online English instruction.</li>
-        </ul>
-
-        <p>
-            <span class="job-title">Personal Tutor</span> - Self-Employed<br>
-            <span class="date-location">June 2022 - July 2023 | Panabo City</span>
-        </p>
-        <ul>
-            <li>Delivered one-on-one academic coaching in English, Math, and Science for students aged 10-16.</li>
-            <li>Used interactive digital tools to enhance student engagement and lesson retention.</li>
-        </ul>
-
-        <!-- Education -->
-        <h2>EDUCATION</h2>
-
-        <p>
-            <span class="school-name">Bachelor of Science in Information Technology</span><br>
-            Davao del Norte State College, New Visayas, Panabo City<br>
-            <span class="date-location">2023 - Present | Dean's List (2023-Present)</span>
-        </p>
-
-        <p>
-            <span class="school-name">Junior High School</span><br>
-            North Davao Colleges, Quirino St, Panabo City<br>
-            <span class="date-location">2017 - 2023 | With High Honors</span>
-        </p>
-
-        <p>
-            <span class="school-name">Elementary Education</span><br>
-            Malativas Elementary School, Malativas, Panabo City<br>
-            <span class="date-location">2010 - 2017 | With High Honors</span>
-        </p>
     </div>
-
 </body>
 
 </html>
