@@ -1,4 +1,4 @@
-# Student Profile - Branch Main Version
+# Student Profile - Feature Branch Version
 
 * Full Name: Aires Jhoy J. Giverola
 * Year Level: 4th Year
